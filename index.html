@@ -1,1 +1,99 @@
-<!DOCTYPE html><html><head><title>PWA</title></head><body>App</body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f2b602">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Partes Diarios Maquinistas - PWA</title>
+<!-- PWA integrado -->Parte Diario - Prototipo</title>
+<style>
+    body { font-family: Arial, sans-serif; background:#f2f2f2; padding:20px; }
+    .card { background:white; padding:20px; border-radius:12px; max-width:420px; margin:auto; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+    h2 { margin-top:0; text-align:center; }
+    label { font-weight:bold; display:block; margin-top:12px; }
+    input, select { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-top:6px; }
+    button { margin-top:20px; width:100%; padding:12px; background:#007bff; color:white; border:none; border-radius:8px; font-size:16px; cursor:pointer; }
+    button:hover { background:#005fcc; }
+</style>
+</head>
+<body>
+<div class="card">
+<img src="/mnt/data/52d0dc4c-7c59-469d-8e81-4c2c0cfa45c5.png" alt="Logo Empresa" style="display:block;margin:0 auto 10px;width:150px;height:auto;">" style="display:block;margin:0 auto 10px;">
+<h2>Parte Diario (Prototipo)</h2>
+
+<label>Fecha</label>
+<input type="date" id="fecha" />
+
+<label>Obra / Sector</label>
+<select>
+    <option>Ruta 9 - Tramo A</option>
+    <option>Ruta 8 - Bacheo General</option>
+    <option>Ruta 11 - Repavimentación</option>
+    <option>Acceso Puerto - Zona Norte</option>
+    <option>Ruta 34 - Variante</option>
+    <option>Autopista Córdoba</option>
+</select>
+
+<label>Máquina utilizada</label>
+<select>
+    <option>Retro 320D</option>
+    <option>Motoniveladora 140K</option>
+    <option>Pala 966H</option>
+</select>
+
+<label>Hora inicial</label>
+<input type="number" placeholder="Ej: 1234.5" />
+
+<label>Hora final</label>
+<input type="number" placeholder="Ej: 1240.1" />
+
+<label>Kilometraje (si aplica)</label>
+<input type="number" placeholder="Km" />
+
+<label>Combustible cargado (L)</label>
+<input type="number" placeholder="Litros" />
+
+<label>Turno</label>
+<select>
+    <option>Mañana</option>
+    <option>Tarde</option>
+    <option>Noche</option>
+</select>
+
+<button>Enviar Parte</button>
+
+<label>Estado de la máquina</label>
+<select>
+    <option>OK</option>
+    <option>Con fallas</option>
+</select>
+
+<label>Descripción de fallas</label>
+<input type="text" placeholder="Detalle de la falla" />
+
+<label>Adjuntar foto/video</label>
+<input type="file" accept="image/*,video/*" />
+
+<label>Tareas realizadas</label>
+<select>
+    <option>Movimiento de suelo</option>
+    <option>Excavación</option>
+    <option>Carga</option>
+    <option>Transporte</option>
+    <option>Compactación</option>
+    <option>Otros</option>
+</select>
+
+<label>Observaciones</label>
+<input type="text" placeholder="Observaciones adicionales" />
+</div>
+</body>
+</html>
